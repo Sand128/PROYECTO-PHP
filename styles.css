@@ -1,0 +1,121 @@
+/* Reset de márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos del body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Fondo blanco para la página */
+    color: #333; /* Texto oscuro para buena legibilidad */
+}
+
+/* Encabezado */
+header {
+    background-color: #006400; /* Verde oscuro para confianza y seriedad */
+    color: white;
+    padding: 20px;
+}
+
+/* Logo en el encabezado */
+header .logo img {
+    width: 200px; /* Tamaño de ancho recomendado */
+    height: auto; /* Mantiene la proporción */
+    max-width: 100%; /* Asegura que el logo se ajuste si es más pequeño */
+    margin: 0;
+}
+
+/* Estilo del menú de navegación */
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #FFD700; /* Oro para el efecto hover */
+}
+
+/* Sección hero */
+.hero {
+    background-color: #008000; /* Verde medio para una sensación fresca */
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #FFD700; /* Oro brillante para el botón */
+    color: #006400; /* Verde oscuro para contraste con el botón */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #E6B800; /* Oro más oscuro al pasar el mouse */
+}
+
+/* Sección de productos */
+.productos {
+    padding: 40px 20px;
+    background-color: white; /* Fondo blanco para resaltar productos */
+}
+
+.producto-item {
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.producto-item h3 {
+    color: #006400; /* Verde para los títulos de productos */
+}
+
+.producto-item p {
+    color: #333; /* Texto oscuro para una lectura clara */
+}
+
+/* Pie de página */
+footer {
+    background-color: #006400; /* Mismo verde oscuro que el encabezado */
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #FFD700; /* Oro para los enlaces */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
