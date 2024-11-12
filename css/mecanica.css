@@ -1,0 +1,150 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif; /* Fuente general */
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7; /* Fondo claro */
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: #4CAF50; /* Verde UMB */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos para la sección hero */
+.hero {
+    background-color: #4CAF50; /* Verde UMB */
+    color: white; /* Texto blanco */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+/* Estilos para los iconos */
+.iconos {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0;
+    text-align: center;
+}
+
+.icono {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    transition: transform 0.3s ease;
+}
+
+.icono:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+}
+
+.icono-img {
+    width: 50px; /* Tamaño del icono */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.icono p {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilos para las secciones de información */
+.informacion {
+    padding: 40px 20px;
+    background-color: white; /* Fondo blanco */
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.informacion h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: #4CAF50; /* Verde UMB */
+}
+
+.informacion p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Estilo para la sección de Objetivo */
+#objetivo {
+    background-color: #fff; /* Fondo blanco para el objetivo */
+    padding: 40px 20px; /* Espaciado interno */
+    margin: 40px 20; /* Espaciado externo */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+#objetivo h2 {
+    font-size: 2.2em;
+    color: #4CAF50; /* Verde UMB para el título */
+    margin-bottom: 20px; /* Espaciado debajo del título */
+    text-align: center; /* Centrado del título */
+}
+
+#objetivo p {
+    font-size: 1.2em;
+    line-height: 1.8; /* Espaciado entre líneas */
+    color: #333; /* Texto oscuro para mayor legibilidad */
+    text-align: justify; /* Justificar el texto */
+    margin: 0 10%; /* Márgenes laterales para mejorar la lectura */
+}
+
+/* Contenedor común */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Estilos para el pie de página */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #4CAF50; /* Verde UMB */
+    color: white; /* Texto blanco */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .iconos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .icono {
+        margin: 10px 0;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    #objetivo p {
+        margin: 0 5%; /* Reducir márgenes laterales en pantallas pequeñas */
+    }
+}

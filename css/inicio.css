@@ -1,0 +1,63 @@
+/* Estilo para la sección principal (hero) */
+.hero {
+    background: url('logos/umb.png') no-repeat center center;
+    background-size: cover;
+    padding: 50px 0;
+    text-align: center;
+    color: var(--blanco); /* Texto blanco */
+}
+    
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: var(--oro-umb); /* Color dorado para el título */
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+/* Estilo para el botón "Ver inventario" */
+.btn-primary {
+    display: inline-block;
+    background-color: hsl(128, 84%, 39%); /* Verde suave */
+    color: var(--blanco); /* Texto blanco */
+    padding: 12px 30px;
+    border-radius: 30px; /* Bordes redondeados */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.btn-primary:hover {
+    background-color: hsl(128, 84%, 49%); /* Verde más vibrante al pasar el mouse */
+    transform: translateY(-4px); /* Efecto de elevación al pasar el mouse */
+}
+
+.btn-primary:active {
+    background-color: hsl(128, 84%, 29%); /* Verde oscuro cuando el botón es presionado */
+    transform: translateY(2px); /* Efecto de presionar el botón */
+}
+
+.btn-primary:focus {
+    outline: none; /* Eliminar el borde de enfoque por defecto */
+    box-shadow: 0 0 0 4px rgba(128, 212, 150, 0.6); /* Sombra de enfoque verde claro */
+}
+
+/* Estilo para las imágenes en la página de inicio */
+.imagenes {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.imagenes .img-thumbnail {
+    border: 5px solid var(--blanco); /* Bordes blancos en las imágenes */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    height: auto;
+    margin: 10px;
+}

@@ -1,0 +1,134 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif; /* Fuente general */
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7; /* Fondo claro */
+}
+
+/* Estilos para el encabezado */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4CAF50; /* Verde UMB */
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 50px; /* Ajustar tamaño del logo */
+}
+
+nav ul {
+    list-style-type: none; /* Sin viñetas */
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px; /* Espaciado entre elementos */
+}
+
+nav ul li a {
+    color: white; /* Texto blanco */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold; /* Negrita */
+    transition: color 0.3s; /* Transición suave */
+}
+
+nav ul li a:hover {
+    color: #FFD700; /* Color oro al pasar el mouse */
+}
+
+/* Estilos para el buscador */
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: 20px; /* Espacio a la izquierda */
+}
+
+.search-container input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 5px; /* Bordes redondeados */
+    width: 250px; /* Ancho del campo de búsqueda */
+}
+
+.search-container button {
+    padding: 10px 15px;
+    background-color: #FFD700; /* Color oro */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor a puntero */
+    margin-left: 5px; /* Espacio a la izquierda */
+    font-weight: bold; /* Negrita */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.search-container button:hover {
+    background-color: #FFC107; /* Color oro más oscuro al pasar el mouse */
+}
+
+/* Estilos para la sección hero */
+.hero {
+    background-color: #4CAF50; /* Verde UMB */
+    color: white; /* Texto blanco */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    margin: 0 0 20px; /* Espaciado */
+}
+
+/* Estilos para las imágenes */
+.imagenes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permitir que las imágenes se ajusten */
+    margin: 20px 0; /* Espaciado arriba y abajo */
+}
+
+.img-thumbnail {
+    width: 200px; /* Ancho de las imágenes */
+    height: auto; /* Altura automática */
+    margin: 10px; /* Margen entre imágenes */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilos para la sección de inventario */
+.inventario {
+    padding: 20px;
+    background-color: white; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin: 20px; /* Margen */
+}
+
+.inventario h2 {
+    text-align: center; /* Centrar el título */
+}
+
+/* Estilos para los elementos del inventario */
+.inventario-item {
+    margin: 15px 0; /* Espaciado entre elementos */
+    padding: 10px;
+    border-bottom: 1px solid #ccc; /* Línea separadora */
+}
+
+.inventario-item h3 {
+    margin: 0; /* Sin margen */
+}
+
+/* Estilos para el pie de página */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: hsl(128, 84%, 29%); /* Fondo  */
+    color: white; /* Texto blanco */
+    position: relative; /* Posicionamiento relativo */
+    bottom: 0; /* Posicionar en la parte inferior */
+    width: 100%; /* Ancho completo */
+}

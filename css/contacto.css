@@ -1,0 +1,126 @@
+/* Estilos generales para la página de contacto */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Títulos */
+h1, h2 {
+    text-align: center;
+    color: hsl(128, 84%, 29%);
+    margin: 20px 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+/* Estilo del formulario de contacto */
+form {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd; /* Borde sutil */
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: hsl(128, 84%, 39%);
+    outline: none;
+}
+
+/* Estilo del botón de enviar */
+form button {
+    background-color: hsl(128, 84%, 39%);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%; /* Botón ocupa todo el ancho */
+}
+
+form button:hover {
+    background-color: hsl(128, 84%, 49%);
+    transform: translateY(-2px); /* Efecto de elevación sutil */
+}
+
+form button:active {
+    background-color: hsl(128, 84%, 29%);
+    transform: translateY(1px); /* Efecto de presionar el botón */
+}
+
+/* Mensaje de confirmación */
+p {
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+    margin: 20px;
+}
+
+/* Detalles de contacto */
+ul.contact-info {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+ul.contact-info li {
+    margin: 10px 0;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+
+    form button {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+
+    h1, h2 {
+        font-size: 1.5em;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+        padding: 10px;
+    }
+}
