@@ -1,7 +1,7 @@
 <?php
     // Credenciales
     $server = "localhost";
-    $database = "isc171";
+    $database = "sist_control";
     $username = "root";
     $psw = "";
 
