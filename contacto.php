@@ -30,7 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Página de Contacto</title>
+    <link rel="stylesheet" href="css/contacto.css"> <!-- Asegúrate de enlazar tu CSS -->
 </head>
 <body>
     <h1>Contacto</h1>
@@ -39,17 +40,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p>¡Gracias por tu mensaje, <?php echo $nombre; ?>! Nos pondremos en contacto contigo pronto.</p>
     <?php else: ?>
         <form action="contacto.php" method="post">
-            <label for="nombre">Nombre:</label><br>
-            <input type="text" name="nombre" required><br>
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" required>
 
-            <label for="correo">Correo Electrónico:</label><br>
-            <input type="email" name="correo" required><br>
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" name="correo" required>
 
-            <label for="asunto">Asunto:</label><br>
-            <input type="text" name="asunto" required><br>
+            <label for="asunto">Asunto:</label>
+            <input type="text" name="asunto" required>
 
-            <label for="mensaje">Mensaje:</label><br>
-            <textarea name="mensaje" rows="5" required></textarea><br>
+            <label for="mensaje">Mensaje:</label>
+            <textarea name="mensaje" rows="5" required></textarea>
 
             <button type="submit">Enviar</button>
         </form>
@@ -60,6 +61,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <p>Clave de Institución: 15ESU0027P</p>
     <p>Teléfono: 7229326275</p>
     <p>Correo Electrónico: uesxalatlaco@umb.mx</p>
-    <p>Dirección: CALLE LOS CAPULINES SN, BARRIO DE SAN JUAN, 52680 SAN JUAN, XALATLACO, ESTADO DE MÉXICO. A UN COSTADO  DE LA UNIDAD DEPORTIVA DE XALATLACO.</p>
+    <p>Dirección: CALLE LOS CAPULINES SN, BARRIO DE SAN JUAN, 52680 SAN JUAN, XALATLACO, ESTADO DE MÉXICO. A UN COSTADO DE LA UNIDAD DEPORTIVA DE XALATLACO.</p>
 </body>
 </html>
