@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($userData['status'] === 'activo') {
             // Las credenciales son correctas y el usuario está activo, iniciar sesión
             $_SESSION['usuario'] = $usuario;
-            header("Location: dashboard.php"); // Redirigir a la página de inicio
+            header("Location: inicioUsuario.php"); // Redirigir a la página de inicio
             exit();
         } else {
             // Usuario no está activo
