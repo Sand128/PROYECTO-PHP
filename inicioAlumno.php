@@ -48,34 +48,55 @@ switch ($userData['tipo_usuario']) {
 
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio Alumno</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body class="<?php echo $typeClass; ?>">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inicio Alumno</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
 
-    <h1>Bienvenido, <?php echo htmlspecialchars($userData['nombre']); ?></h1>
+    <body class="<?php echo $typeClass; ?>">
 
-    <div class="container">
-        <h2>Mis Datos</h2>
-        <p><strong>Nombre:</strong> <?php echo $userData['nombre']; ?></p>
-        <p><strong>Matrícula:</strong> <?php echo $userData['usser']; ?></p>
-        <p><strong>Estado:</strong> <?php echo $userData['status']; ?></p>
+        <h1>Bienvenido, <?php echo htmlspecialchars($userData['nombre']); ?></h1>
 
-        <h2>Mis Prácticas Realizadas</h2>
-        <!-- Aquí se mostrará una tabla con las prácticas realizadas por el alumno -->
+        <div class="container">
+            <h2>Mis Datos</h2>
+            <p><strong>Nombre:</strong> <?php echo $userData['nombre']; ?></p>
+            <p><strong>Matrícula:</strong> <?php echo $userData['usser']; ?></p>
+            <p><strong>Estado:</strong> <?php echo $userData['status']; ?></p>
 
-        <h2>Solicitar Préstamos de Herramientas</h2>
-        <!-- Formulario para solicitar préstamos -->
+            <h2>Mis Prácticas Realizadas</h2>
+                <?php        
+                    $sql = "SELECT folio,materia,unidad,grupo FROM practica";
+                    $result = mysqli_query($conn, $sql);
+                    
+                    if (mysqli_num_rows($result) > 0) {
+                        echo "<table border='1'>
+                            <tr>
+                                <td>Folio</td>
+                                <td>Materia</td>
+                                <td>Unidad</td>
+                                <td>Grupo</td>
+                                <td>Descargar</td>
+                            </tr>";
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<tr>
+                                    <td>" . $row['folio'] . "</td>
+                                    <td>" . $row['materia'] . "</td>
+                                    <td>" . $row['unidad'] . "</td>
+                                    <td>" . $row['grupo'] . "</td>
+                            </tr>";
+                        }
+                    echo "</table>";
+                }else{
+                    echo "No hay reguistros disponibles.";
+                }
+                // Cerrar la conexión
+                mysqli_close($conn);
+                ?>
 
-        <h2>Consultar Inventario</h2>
-        <!-- Información del inventario -->
+            <h2>Solicitar Préstamos de Herramientas</h2>
 
-        <button>Subir PDF</button>
-        <button>Eliminar PDF</button>
-    </div>
-
-</body>
+        </div>
+    </body>
 </html>
