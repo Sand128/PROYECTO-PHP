@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows === 1) {
         // Las credenciales son correctas, iniciar sesión
         $_SESSION['usuario'] = $usuario;
-        header("Location: index2.php"); // Redirigir a la página de inicio
+        header("Location: dashboard.php"); // Redirigir a la página de inicio
         exit();
     } else {
         // Credenciales incorrectas
