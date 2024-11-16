@@ -35,6 +35,11 @@
                     <td><input type="text" name="usser" value=""></td>
                 </tr>
                 <tr>
+                    <td>Contraseña</td>
+                    <td><input type="password" name="passw" value=""></td>
+                </tr>
+                <tr>
+                <tr>
                     <td><input type="submit" name="Registrar"></td>
                 </tr>
             </table>
