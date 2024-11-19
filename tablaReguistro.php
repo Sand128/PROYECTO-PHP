@@ -21,7 +21,7 @@ include("conexcion.php");
 <body>
 
 <?php
-$sql = "SELECT foto, id, nombre, tipo_usuario, usser, passw, status FROM usuario";
+$sql = "SELECT foto, id, nombre, tipo_usuario,tipo_admin, usser, passw, status FROM usuario";
 $result = $conn->query($sql);
 
 echo "<h2>Usuarios Registrados</h2>";
@@ -31,6 +31,7 @@ echo "<table border='1'>
             <th>ID</th>
             <th>Nombre completo</th>
             <th>Tipo de usuario</th>
+            <th>Tipo de admin</th>
             <th>Nombre para iniciar sesión</th>
             <th>Contraseña</th>
             <th>Estatus</th>
@@ -45,6 +46,7 @@ if ($result->num_rows > 0) {
             <td>" . htmlspecialchars($row['id']) . "</td>
             <td>" . htmlspecialchars($row['nombre']) . "</td>
             <td>" . htmlspecialchars($row['tipo_usuario']) . "</td>
+            <td>" . htmlspecialchars($row['tipo_admin']) . "</td>
             <td>" . htmlspecialchars($row['usser']) . "</td>
             <td>" . htmlspecialchars($row['passw']) . "</td>
             <td>" . htmlspecialchars($row['status']) . "</td>
