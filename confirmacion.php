@@ -35,19 +35,33 @@ if (isset($_GET['accion'])) {
     if ($accion == 'modificar' && isset($_GET['id'])) {
         $id = $_GET['id'];
 
-        // Aquí deberías agregar la lógica para mostrar un formulario de edición
-        // o realizar la actualización en la base de datos.
+        // Obtener los datos actuales del usuario
+        $sql = "SELECT * FROM usuario WHERE id = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $userData = $result->fetch_assoc();
 
-        echo "<h1>Formulario de modificación para el usuario con ID: $id</h1>";
+        if (!$userData) {
+            echo "Usuario no encontrado.";
+            exit;
+        }
 
-        // Aquí podrías redirigir a una página con un formulario de edición,
-        // o hacer la modificación directamente si decides usar un solo archivo para editar.
-        // Redirigir a una página de edición:
-        header("Location: editarUsuario.php?id=$id");
+        // Redirigir a la página de actualización y pasar los datos del usuario
+        // Puedes usar sesiones o pasar los datos a través de la URL (no recomendado para datos sensibles)
+        session_start();
+        $_SESSION['userData'] = $userData; // Guardar datos en la sesión
+        header("Location: actualizarRegistroUsuario.php");
         exit;
+
+        // Cerrar la declaración
+        $stmt->close();
     }
 } else {
     echo "Acción no especificada.";
 }
 
+// Cerrar la conexión
+mysqli_close($conn);
 ?>

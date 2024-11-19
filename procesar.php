@@ -6,27 +6,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener los valores del formulario
     $matricula = $_POST['id'];
     $nombre = $_POST['nombre'];
-    $tusuario = $_POST['tipo_usuario'];
+    $tusuario = $_POST['tipo'];
     $usser = $_POST['usser'];
     $password = $_POST['passw']; 
     $foto = 'imagenes/icons8-avatar-30.png'; // Asignando una foto por defecto
+    
+    // Cifrar la contraseña
+    // Generar una contraseña aleatoria
+    //$password = bin2hex(random_bytes(4)); // Genera una contraseña de 8 caracteres (4 bytes)
+    //$hashedPassword = password_hash($password, PASSWORD_DEFAULT); // Hashear la contraseña
 
-    // Validar que todos los campos no estén vacíos
-    if (empty($matricula) || empty($nombre) || empty($tusuario) || empty($usser)) {
-        echo "Por favor, complete todos los campos.";
-        exit; // Salir si faltan campos
+    
+    // Determinar el tipo de usuario
+    $tipo_admin = null;
+    $tipo_usuario = null;
+    
+
+    // Validar el tipo de usuario
+    if (in_array($tusuario, ['Alumno', 'Maestro'])) {
+        $tipo_usuario = $tusuario;
+        $tipo_admin = "";
+    } elseif (in_array($tusuario, ['Administrador', 'Coordinador', 'Ayudante'])) {
+        $tipo_admin = $tusuario;
+        $tipo_usuario = "";
+    } else {
+        echo "Tipo de usuario no válido.";
+        exit;
     }
 
-    // Cifrar la contraseña
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
     // Usar una consulta preparada para evitar inyecciones SQL
-    $sql = "INSERT INTO usuario (id, nombre, tipo_usuario, usser, passw, status, foto) 
-            VALUES (?, ?, ?, ?, ?, 'activo', ?)";
+    $sql = "INSERT INTO usuario (id, nombre, tipo_usuario, tipo_admin, usser, passw, status, foto) 
+            VALUES ( ?, ?, ?, ?, ?, ?, 'activo', ?)";
 
     if ($stmt = $conn->prepare($sql)) {
         // Vincular los parámetros
-        $stmt->bind_param("isssss", $matricula, $nombre, $tusuario, $usser, $hashedPassword, $foto);
+        // Cambié el tipo de datos en bind_param para que coincidan con los tipos correctos
+        $stmt->bind_param("issssss", $matricula, $nombre, $tipo_usuario, $tipo_admin, $usser, $password, $foto);
         
         // Ejecutar la consulta
         if ($stmt->execute()) {
@@ -39,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Cerrar la declaración
         $stmt->close();
     } else {
-        echo "Error al preparar la consulta: " . $conn-> error;
+        echo "Error al preparar la consulta: " . $conn->error;
     }
 }
 

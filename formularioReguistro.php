@@ -21,10 +21,10 @@
                 <tr>
                     <td>Tipo de usuario</td>
                     <td>
-                        <select id="tipo_usuario" name="tipo_usuario" >
+                        <select id="tipo" name="tipo" >
                             <option value="Alumno">Alumno</option>
                             <option value="Maestro">Maestro</option>
-                            <option value="Administrativo">Administrativo</option>
+                            <option value="Administrativo">Administrador</option>
                             <option value="Ayudante">Ayudante</option>
                             <option value="Coordinador">Coordinador</option>
                         </select>
@@ -34,10 +34,12 @@
                     <td>Nombre para iniciar sesión</td>
                     <td><input type="text" name="usser" value=""></td>
                 </tr>
+                <!--
                 <tr>
                     <td>Contraseña</td>
                     <td><input type="password" name="passw" value=""></td>
                 </tr>
+                -->
                 <tr>
                 <tr>
                     <td><input type="submit" name="Registrar"></td>
