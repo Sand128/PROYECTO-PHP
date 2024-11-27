@@ -14,7 +14,7 @@ include("conexcion.php");
             <img src="iconos/icons8-search-50.png" alt="Buscar" class="search-icon"> <!-- Ícono de lupa -->
         </button>
     </form>
-    
+    <a href="formularioReguistro.php">Nuevo Registro</a>
     <!-- Incluir el archivo JavaScript externo -->
     <script src="js/confirmacion.js"></script> <!-- Asume que está en la carpeta js/ -->
 </head>

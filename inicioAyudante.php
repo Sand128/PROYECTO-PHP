@@ -65,10 +65,47 @@ switch ($userData['tipo_usuario']) {
         <p><strong>Estado:</strong> <?php echo $userData['status']; ?></p>
 
         <h2>Prácticas Asignadas para el Mes</h2>
-        <!-- Aquí se mostrará una tabla con las prácticas asignadas al ayudante -->
+            <?php
+    $sql = "SELECT pf.id, p.folio, p.materia, p.grupo, f.fecha, pf.hora FROM prac_fecha AS pf, fecha AS f, practica AS p";
+    $result = mysqli_query($conn, $sql);
 
+            if (mysqli_num_rows($result) > 0) {
+                echo "<table border='1'>
+                                <tr>
+                                    <td>Orden</td>
+                                    <td>Folio practica</td>
+                                    <td>Materia</td>
+                                    <td>Grupo</td>
+                                    <td>Fecha</td>
+                                    <td>Hora</td>
+                                    <td>Estatus</td>
+                                </tr>";
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<tr>
+                                        <td>" . $row['id'] . "</td>
+                                        <td>" . $row['folio'] . "</td>
+                                        <td>" . $row['materia'] . "</td>
+                                        <td>" . $row['grupo'] . "</td>
+                                        <td>" . $row['fecha'] . "</td>
+                                        <td>". $row['hora'] ."</td>
+                                        <td><a href='#?folio=" . $row['folio'] . "'>
+                                        <img src='iconos/icons8-reloj-100.png' alt='Editar' width='30' height='30'></a></td>
+                                </tr>";
+                }
+                echo "</table>";
+            } else {
+                echo "No hay reguistros disponibles.";
+            }
+            // Cerrar la conexión
+            mysqli_close($conn);
+            ?>
         <h2>Consultar Inventario</h2>
-        <!-- Información del inventario -->
+        <form action="busqueda.php" method="POST" class="search-form">
+            <input type="text" id="Dato" name="Dato" placeholder="Buscar ..." required>
+            <button type="submit" class="search-btn">
+                <img src="iconos/icons8-search-50.png" alt="Buscar" class="search-icon"> <!-- Ícono de lupa -->
+            </button>
+        </form>
 
     </div>
 

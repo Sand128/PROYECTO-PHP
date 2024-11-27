@@ -69,3 +69,31 @@
     80% { transform: translateX(-400%); }
     100% { transform: translateX(0); }
 }
+<style>
+        /* Estilos para el botón de notificaciones */
+        #notification-bell {
+            width: 50px; /* Ajusta el tamaño según tus imágenes */
+            height: 50px; /* Ajusta el tamaño según tus imágenes */
+            background-color: transparent; /* Fondo transparente */
+            border: none; /* Sin borde */
+            cursor: pointer;
+            position: relative;
+            margin-left: 20px; /* Espaciado a la izquierda */
+        }
+
+        #unseen-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 5px;
+            font-size: 12px;
+            display: none; /* Oculto por defecto */
+        }
+
+        .has-notifications #unseen-badge {
+            display: block; /* Mostrar cuando hay notificaciones */
+        }
+    </style>
