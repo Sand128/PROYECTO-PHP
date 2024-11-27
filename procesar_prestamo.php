@@ -1,6 +1,5 @@
 <?php
 include("conexcion.php");
-
 // Preparar la consulta para insertar el préstamo
 $sql = "INSERT INTO prestamos (id, id_practica, id_vehiculo, id_usuario, id_admin, hora_salida, hora_entrada, fecha) 
         VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
@@ -30,4 +29,6 @@ if ($stmt->execute()) {
 // Cerrar la declaración y la conexión
 $stmt->close();
 $conn->close();
+header("Location:inicio.php");
+
 ?>
